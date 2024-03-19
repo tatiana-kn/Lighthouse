@@ -144,7 +144,6 @@ struct LighthouseView: View {
     LighthouseView(animation: Animation.easeInOut(duration: 6).repeatForever(autoreverses: true))
 }
 
-
 //// Sun
 //Path { path in
 //    path.addArc(
