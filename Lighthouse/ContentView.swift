@@ -27,7 +27,6 @@ struct ContentView: View {
                     skyColor = [.butter, .pinky]
                 }
             }
-            
             NatureView(animation: dayAnimation)
             LighthouseView(animation: dayAnimation)
             BoatView()

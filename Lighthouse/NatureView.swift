@@ -100,7 +100,7 @@ struct CloudView: View {
             .fill(.light)
             .onAppear {
                 withAnimation(animation) {
-                    cloudOffset = 40
+                    cloudOffset = 35
                 }
             }
         }
