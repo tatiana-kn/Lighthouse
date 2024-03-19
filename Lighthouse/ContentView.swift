@@ -13,11 +13,10 @@ struct ContentView: View {
         ZStack {
             VStack(spacing: .zero) {
                 LinearGradient(
-                    colors: [.purple, .blue],
+                    colors: [.sand, .pinky],
                     startPoint: .bottomLeading,
                     endPoint: .topTrailing
                 )
-                .opacity(0.65)
                 .ignoresSafeArea()
                 
             }
@@ -30,11 +29,3 @@ struct ContentView: View {
     ContentView()
 }
 
-
-// water gradient
-//LinearGradient(
-//                colors: [.blue, .cyan, .blue],
-//                startPoint: .top,
-//                endPoint: .bottom
-//            )
-//            .ignoresSafeArea()

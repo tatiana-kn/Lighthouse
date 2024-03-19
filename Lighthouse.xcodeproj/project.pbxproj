@@ -12,6 +12,7 @@
 		142511FE2BA836DF00EE55E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142511FD2BA836DF00EE55E1 /* Assets.xcassets */; };
 		142512012BA836DF00EE55E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142512002BA836DF00EE55E1 /* Preview Assets.xcassets */; };
 		142512082BA88D3400EE55E1 /* LighthouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142512072BA88D3400EE55E1 /* LighthouseView.swift */; };
+		1425120B2BA99F7C00EE55E1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1425120A2BA99F7C00EE55E1 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		142511FD2BA836DF00EE55E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		142512002BA836DF00EE55E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		142512072BA88D3400EE55E1 /* LighthouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseView.swift; sourceTree = "<group>"; };
+		1425120A2BA99F7C00EE55E1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		142511F82BA836DD00EE55E1 /* Lighthouse */ = {
 			isa = PBXGroup;
 			children = (
+				142512092BA99F2300EE55E1 /* Model */,
 				142511F92BA836DD00EE55E1 /* LighthouseApp.swift */,
 				142511FB2BA836DD00EE55E1 /* ContentView.swift */,
 				142512072BA88D3400EE55E1 /* LighthouseView.swift */,
@@ -68,6 +71,14 @@
 				142512002BA836DF00EE55E1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		142512092BA99F2300EE55E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1425120A2BA99F7C00EE55E1 /* Theme.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				142511FC2BA836DD00EE55E1 /* ContentView.swift in Sources */,
+				1425120B2BA99F7C00EE55E1 /* Theme.swift in Sources */,
 				142512082BA88D3400EE55E1 /* LighthouseView.swift in Sources */,
 				142511FA2BA836DD00EE55E1 /* LighthouseApp.swift in Sources */,
 			);
