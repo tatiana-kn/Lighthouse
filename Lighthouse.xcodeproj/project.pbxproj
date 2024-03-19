@@ -13,6 +13,8 @@
 		142512012BA836DF00EE55E1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 142512002BA836DF00EE55E1 /* Preview Assets.xcassets */; };
 		142512082BA88D3400EE55E1 /* LighthouseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142512072BA88D3400EE55E1 /* LighthouseView.swift */; };
 		1425120B2BA99F7C00EE55E1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1425120A2BA99F7C00EE55E1 /* Theme.swift */; };
+		1425120D2BA9CADF00EE55E1 /* BoatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1425120C2BA9CADF00EE55E1 /* BoatView.swift */; };
+		1425120F2BA9D47400EE55E1 /* NatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1425120E2BA9D47400EE55E1 /* NatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		142512002BA836DF00EE55E1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		142512072BA88D3400EE55E1 /* LighthouseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LighthouseView.swift; sourceTree = "<group>"; };
 		1425120A2BA99F7C00EE55E1 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1425120C2BA9CADF00EE55E1 /* BoatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoatView.swift; sourceTree = "<group>"; };
+		1425120E2BA9D47400EE55E1 /* NatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				142511F92BA836DD00EE55E1 /* LighthouseApp.swift */,
 				142511FB2BA836DD00EE55E1 /* ContentView.swift */,
 				142512072BA88D3400EE55E1 /* LighthouseView.swift */,
+				1425120E2BA9D47400EE55E1 /* NatureView.swift */,
+				1425120C2BA9CADF00EE55E1 /* BoatView.swift */,
 				142511FD2BA836DF00EE55E1 /* Assets.xcassets */,
 				142511FF2BA836DF00EE55E1 /* Preview Content */,
 			);
@@ -155,6 +161,8 @@
 				1425120B2BA99F7C00EE55E1 /* Theme.swift in Sources */,
 				142512082BA88D3400EE55E1 /* LighthouseView.swift in Sources */,
 				142511FA2BA836DD00EE55E1 /* LighthouseApp.swift in Sources */,
+				1425120D2BA9CADF00EE55E1 /* BoatView.swift in Sources */,
+				1425120F2BA9D47400EE55E1 /* NatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

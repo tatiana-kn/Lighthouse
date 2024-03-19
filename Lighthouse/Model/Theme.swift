@@ -18,4 +18,5 @@ enum Theme {
     case lightSky
     case brightSun
     case darkWater
+    case darkPink
 }

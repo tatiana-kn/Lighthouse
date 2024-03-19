@@ -8,14 +8,9 @@
 import SwiftUI
 
 struct LighthouseView: View {
-    @State private var circleColor: [Color] = [.sand, .butter]
-    @State private var circleOffset: CGFloat = 0
-    @State private var boatOffset: CGFloat = 0
-    @State private var cloudOffset: CGFloat = 0
-    @State private var birdOffset: CGFloat = 0
-    @State private var waterColor: [Color] = [.sand, .darkWater]
+    @State private var lightColor: Color = .brightSun
     
-//    let animation = Animation.easeIn(duration: 4).repeatForever(autoreverses: true)
+    let sunriseAnimation = Animation.easeInOut(duration: 6).repeatForever(autoreverses: true)
     
     var body: some View {
         
@@ -23,20 +18,7 @@ struct LighthouseView: View {
             let width = geometry.size.width
             let height = geometry.size.height
             
-            // Sun
-            Circle()
-                .fill(Gradient(colors: circleColor))
-                .frame(width: width * 0.45)
-                .position(x: width * 0.4, y: height * 0.75)
-                .offset(y: circleOffset)
-                .onAppear {
-                    withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: true)) {
-                        circleColor = [.butter, .pinky]
-                        circleOffset = -100
-                    }
-                }
-            
-            // Lighthouse
+            // MARK: Lighthouse
             Path { path in
                 path.move(to: CGPoint(x: width * 0.75, y: height * 0.27))
                 path.addLine(to: CGPoint(x: width * 0.75, y: height * 0.25))
@@ -86,16 +68,20 @@ struct LighthouseView: View {
             }
             .fill(.sand)
             
-            
             Path { path in
                 path.move(to: CGPoint(x: width * 0.8, y: height * 0.31))
                 path.addQuadCurve(
                     to: CGPoint(x: width * 0.7, y: height * 0.31),
                     control: CGPoint(x: width * 0.75, y: height * 0.23))
             }
-            .fill(.yellow)
-            .opacity(0.5)
-            
+            .onAppear {
+                withAnimation(sunriseAnimation) {
+                    lightColor = .light
+                }
+            }
+            //                        .fill(.yellow)
+            //                        .opacity(0.5)
+
             Path { path in
                 path.move(to: CGPoint(x: width * 0.73, y: height * 0.27))
                 path.addLine(to: CGPoint(x: width * 0.77, y: height * 0.27))
@@ -138,7 +124,7 @@ struct LighthouseView: View {
             }
             .fill(.reddish)
             
-            // Ground
+            // MARK: Ground
             Path { path in
                 path.move(to: CGPoint(x: width * 0.55, y: height * 0.65))
                 path.addQuadCurve(
@@ -151,128 +137,6 @@ struct LighthouseView: View {
                 )
             }
             .fill(.navy)
-            
-            // Clouds
-
-            Path { path in
-                path.move(to: CGPoint(x: width * 0.29, y: height * 0.29))
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.34, y: height * 0.255),
-                    control: CGPoint(x: width * 0.27, y: height * 0.26)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.5, y: height * 0.26),
-                    control: CGPoint(x: width * 0.41, y: height * 0.21)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.54, y: height * 0.29),
-                    control: CGPoint(x: width * 0.56, y: height * 0.26)
-                )
-            }
-            .offset(x: cloudOffset - 40, y: -60)
-            .fill(.light)
-            .onAppear {
-                withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: true)) {
-                    cloudOffset = 30
-                }
-            }
-            
-            Path { path in
-                path.move(to: CGPoint(x: width * 0.29, y: height * 0.29))
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.34, y: height * 0.255),
-                    control: CGPoint(x: width * 0.27, y: height * 0.26)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.5, y: height * 0.26),
-                    control: CGPoint(x: width * 0.41, y: height * 0.21)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.54, y: height * 0.29),
-                    control: CGPoint(x: width * 0.56, y: height * 0.26)
-                )
-            }
-            .offset(x: 180 - cloudOffset, y: -220)
-            .fill(.light)
-            .scaleEffect(0.8)
-            .onAppear {
-                withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: true)) {
-                    cloudOffset = 30
-                }
-            }
-            
-            Path { path in
-                path.move(to: CGPoint(x: width * 0.29, y: height * 0.29))
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.34, y: height * 0.255),
-                    control: CGPoint(x: width * 0.27, y: height * 0.26)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.5, y: height * 0.26),
-                    control: CGPoint(x: width * 0.41, y: height * 0.21)
-                )
-                path.addQuadCurve(
-                    to: CGPoint(x: width * 0.54, y: height * 0.29),
-                    control: CGPoint(x: width * 0.56, y: height * 0.26)
-                )
-            }
-            .offset(x: -cloudOffset - 140, y: 35)
-            .fill(.light)
-            .scaleEffect(0.7)
-            .onAppear {
-                withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: true)) {
-                    cloudOffset = 30
-                }
-            }
-            
-            // Water
-            Path { path in
-                path.move(to: CGPoint(x: 0, y: height * 0.65))
-                path.addLine(to: CGPoint(x: width, y: height * 0.65))
-                path.addLine(to: CGPoint(x: width, y: height * 1.1))
-                path.addLine(to: CGPoint(x: 0, y: height * 1.1))
-            }
-            .fill(
-                LinearGradient(
-                    colors: waterColor,
-                    startPoint: .top,
-                    endPoint: .bottom
-                )
-            )
-            .onAppear {
-                withAnimation(.easeInOut(duration: 8).repeatForever(autoreverses: true)) {
-                    waterColor = [.pinky, .sky]
-                }
-            }
-            
-            // Boat
-            ZStack {
-                Path { path in
-                    path.move(to: CGPoint(x: width * 0.1, y: height * 0.75))
-                    path.addLine(to: CGPoint(x: width * 0.3, y: height * 0.75))
-                    path.addLine(to: CGPoint(x: width * 0.34, y: height * 0.72))
-                    path.addLine(to: CGPoint(x: width * 0.08, y: height * 0.72))
-                }
-                Path { path in
-                    path.move(to: CGPoint(x: width * 0.2, y: height * 0.72))
-                    path.addQuadCurve(
-                        to: CGPoint(x: width * 0.2, y: height * 0.55),
-                        control: CGPoint(x: width * 0.44, y: height * 0.7))
-                }
-                
-                Path { path in
-                    path.move(to: CGPoint(x: width * 0.195, y: height * 0.72))
-                    path.addLine(to: CGPoint(x: width * 0.195, y: height * 0.53))
-                    path.addLine(to: CGPoint(x: width * 0.08, y: height * 0.7))
-                }
-            }
-            .foregroundColor(.navy)
-            .offset(x: boatOffset, y: boatOffset)
-            .onAppear {
-                withAnimation(.easeInOut(duration: 2).repeatForever(autoreverses: true)) {
-                    boatOffset = 10
-                }
-            }
         }
     }
 }
