@@ -10,10 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State private var skyColor: [Color] = [.sand, .darkPink]
     
-    let sunriseAnimation = Animation.easeInOut(duration: 6).repeatForever(autoreverses: true)
+    let dayAnimation = Animation.easeInOut(duration: 6).repeatForever(autoreverses: true)
     
     var body: some View {
-        
         ZStack {
             VStack(spacing: .zero) {
                 LinearGradient(
@@ -24,13 +23,13 @@ struct ContentView: View {
                 .ignoresSafeArea()
             }
             .onAppear {
-                withAnimation(sunriseAnimation) {
+                withAnimation(dayAnimation) {
                     skyColor = [.butter, .pinky]
                 }
             }
             
-            NatureView(animation: sunriseAnimation)
-            LighthouseView()
+            NatureView(animation: dayAnimation)
+            LighthouseView(animation: dayAnimation)
             BoatView()
         }
     }

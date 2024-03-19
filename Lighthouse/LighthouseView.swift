@@ -10,7 +10,7 @@ import SwiftUI
 struct LighthouseView: View {
     @State private var lightColor: Color = .brightSun
     
-    let sunriseAnimation = Animation.easeInOut(duration: 6).repeatForever(autoreverses: true)
+    let animation: Animation
     
     var body: some View {
         
@@ -74,14 +74,13 @@ struct LighthouseView: View {
                     to: CGPoint(x: width * 0.7, y: height * 0.31),
                     control: CGPoint(x: width * 0.75, y: height * 0.23))
             }
+            .fill(lightColor)
             .onAppear {
-                withAnimation(sunriseAnimation) {
+                withAnimation(animation) {
                     lightColor = .light
                 }
             }
-            //                        .fill(.yellow)
-            //                        .opacity(0.5)
-
+            
             Path { path in
                 path.move(to: CGPoint(x: width * 0.73, y: height * 0.27))
                 path.addLine(to: CGPoint(x: width * 0.77, y: height * 0.27))
@@ -142,7 +141,7 @@ struct LighthouseView: View {
 }
 
 #Preview {
-    LighthouseView()
+    LighthouseView(animation: Animation.easeInOut(duration: 6).repeatForever(autoreverses: true))
 }
 
 

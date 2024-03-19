@@ -13,9 +13,8 @@ struct NatureView: View {
     @State private var cloudOffset: CGFloat = 0
     @State private var waterColor: [Color] = [.reddish, .darkWater]
     
-//    let sunriseAnimation = Animation.easeInOut(duration: 8).repeatForever(autoreverses: true)
     let animation: Animation
-
+    
     var body: some View {
         GeometryReader { geometry in
             let width = geometry.size.width
